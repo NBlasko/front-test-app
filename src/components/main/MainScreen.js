@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchQuestions } from '../../actions'
+import { fetchQuestions, postPoints } from '../../actions'
 import SingleQuestion from './SingleQuestion'
 
 
@@ -34,9 +34,22 @@ class MainScreen extends Component {
   }
 
   handleNextQuestion = () => {
-    // uradi nesto sto je bitno sa pitanjem
+    //uradi nesto sto je bitno sa pitanjem
     // posaji u local storage rezultate, a zatim promeni url
     if (this.state.questionNumber === 4) {
+      const userPoints = this.state.points
+      const quiz1 = localStorage.getItem('quiz1') || 0;
+      const quiz2 = localStorage.getItem('quiz2') || 0;
+      const quiz3 = localStorage.getItem('quiz3') || 0;
+      const pointsArray =
+        [quiz1, quiz2, quiz3, userPoints]
+          .sort((a, b) => { return b - a })
+
+      localStorage.quiz1 = pointsArray[0];
+      localStorage.quiz2 = pointsArray[1];
+      localStorage.quiz3 = pointsArray[2];
+      this.props.postPoints(userPoints);
+      this.props.history.replace('/results');
       return;
     }
     this.setState((state) => {
@@ -50,7 +63,6 @@ class MainScreen extends Component {
   render() {
     const { questionNumber, usersAnswer } = this.state;
     const { questions } = this.props;
-    console.log("points", this.state.points);
     return (
       <div>
         <div>
@@ -81,4 +93,4 @@ const mapStateToProps = ({ questions }) => {
 
 export default connect(
   mapStateToProps,
-  { fetchQuestions })(MainScreen);
+  { fetchQuestions, postPoints })(MainScreen);
