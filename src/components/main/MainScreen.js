@@ -32,7 +32,21 @@ class MainScreen extends Component {
       })
     }
   }
-  
+
+  handleNextQuestion = () => {
+    // uradi nesto sto je bitno sa pitanjem
+    // posaji u local storage rezultate, a zatim promeni url
+    if (this.state.questionNumber === 4) {
+      return;
+    }
+    this.setState((state) => {
+      return {
+        usersAnswer: "",
+        questionNumber: state.questionNumber + 1
+      }
+    })
+  }
+
   render() {
     const { questionNumber, usersAnswer } = this.state;
     const { questions } = this.props;
@@ -51,7 +65,10 @@ class MainScreen extends Component {
           />
         }
 
-      
+        {(usersAnswer)
+          ? <button onClick={this.handleNextQuestion}> NEXT </button>
+          : null
+        }
 
       </div>
     );
