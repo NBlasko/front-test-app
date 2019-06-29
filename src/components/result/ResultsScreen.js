@@ -7,13 +7,14 @@ class ResultsScreen extends Component {
       <div>
         Results
         <h2> Youre Score </h2>
+        <div>  {this.props.points}  </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = () => {
-  return {  }
+const mapStateToProps = ({ points }) => {
+  return { points }
 }
 
 
