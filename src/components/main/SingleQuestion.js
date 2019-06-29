@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleQuestion = (props) => {
-    console.log("props", props);
+ //   console.log("props", props);
     const { image, answers, continent } = props.question;
     const { handleAnswer, usersAnswer } = props;
     const isRight = (usersAnswer === continent);
@@ -25,7 +25,7 @@ const SingleQuestion = (props) => {
         )
     return (
         <div>
-            <img src={image} alt="continent" />
+            <img src={image} style={{ width: 200 }} alt="continent" />
             {buttons}
         </div>
     )
