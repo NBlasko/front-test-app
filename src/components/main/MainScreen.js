@@ -9,6 +9,7 @@ class MainScreen extends Component {
   state = {
     questionNumber: 0,
     usersAnswer: "",
+    points: 0
   }
 
   componentDidMount() {
@@ -24,13 +25,18 @@ class MainScreen extends Component {
 
     if (e.target.value === this.props.questions[this.state.questionNumber].continent) {
       console.log("bravo");
+      this.setState((state) => {
+        return {
+          points: state.points + 750
+        }
+      })
     }
   }
-
   
   render() {
     const { questionNumber, usersAnswer } = this.state;
     const { questions } = this.props;
+    console.log("points", this.state.points);
     return (
       <div>
         <div>
