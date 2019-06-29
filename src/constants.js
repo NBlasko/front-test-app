@@ -16,4 +16,4 @@ export const CONTINENTS = [
 // redux types 
 export const FETCH_QUESTIONS = 'FETCH_QUESTIONS';
 
-
+export const POST_POINTS = 'POST_POINTS';

@@ -1,6 +1,7 @@
 import {
   API_URL,
   FETCH_QUESTIONS,
+  POST_POINTS
 } from '../constants';
 import axios from "axios";
 
@@ -18,3 +19,7 @@ export const fetchQuestions = () => dispatch => {
     })
 }
 
+export const postPoints = (points) => ({
+  type: POST_POINTS,
+  payload: points
+});
