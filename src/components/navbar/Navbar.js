@@ -4,14 +4,16 @@ import MaterialIcon, { colorPalette } from 'material-icons-react';
 
 const Navbar = (props) => {
   const { pathname } = props.location;
+  
   let naviLinks = null;
+
   if (pathname !== "/main")
     naviLinks = <ul>
       <li><NavLink exact to="/">
         <MaterialIcon icon="home" />
       </NavLink></li>
       <li><NavLink to='/main'>
-      <MaterialIcon icon="category" /> Play
+        <MaterialIcon icon="category" /> Play
       </NavLink></li>
     </ul>;
 

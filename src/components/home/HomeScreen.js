@@ -5,16 +5,23 @@ class HomeScreen extends Component {
 
 
   render() {
-    const quiz1 = localStorage.getItem('quiz1') || 0;
-    const quiz2 = localStorage.getItem('quiz2') || 0;
-    const quiz3 = localStorage.getItem('quiz3') || 0;
+    // all points from local Storage put in array
+    const quizScores = [
+      localStorage.getItem('quiz1') || 0,
+      localStorage.getItem('quiz2') || 0,
+      localStorage.getItem('quiz3') || 0
+    ]
+    // then create beautiful output :)
+    .map((score, key) =>
+      <div key={key}>
+        <span> #{key + 1} </span> {parseInt(score).toLocaleString()} pts
+        </div>
+    );
 
     return (
       <div>
-        Home
-        <div>  1. {quiz1}  </div>
-        <div>  2. {quiz2}  </div>
-        <div>  3. {quiz3}  </div>
+        Your Scores
+        {quizScores}
       </div>
     );
   }

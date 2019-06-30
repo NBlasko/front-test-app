@@ -20,31 +20,38 @@ class MainScreen extends Component {
 
     // prevent answering more than once
     if (this.state.usersAnswer) return;
-    const usersAnswer = e.target.value;
-    this.setState({ usersAnswer })
 
-    if (e.target.value === this.props.questions[this.state.questionNumber].continent) {
-      console.log("bravo");
+    const { questions } = this.props;
+    const { questionNumber } = this.state;
+    const usersAnswer = e.target.value;
+
+    // user has answered
+    this.setState({ usersAnswer });
+
+    // for correct answer add 750 points
+    if (e.target.value === questions[questionNumber].continent) {
       this.setState((state) => {
         return {
           points: state.points + 750
         }
-      })
+      });
     }
   }
 
   handleNextQuestion = () => {
-    //uradi nesto sto je bitno sa pitanjem
-    // posaji u local storage rezultate, a zatim promeni url
+    // If last question
     if (this.state.questionNumber === 4) {
-      const userPoints = this.state.points
-      const quiz1 = localStorage.getItem('quiz1') || 0;
-      const quiz2 = localStorage.getItem('quiz2') || 0;
-      const quiz3 = localStorage.getItem('quiz3') || 0;
-      const pointsArray =
-        [quiz1, quiz2, quiz3, userPoints]
-          .sort((a, b) => { return b - a })
+      const userPoints = this.state.points;
 
+      // fetch from local Storage and sort all points
+      const pointsArray = [
+        localStorage.getItem('quiz1') || 0,
+        localStorage.getItem('quiz2') || 0,
+        localStorage.getItem('quiz3') || 0,
+        userPoints
+      ].sort((a, b) => { return b - a });
+
+      // set new points list back in local Storage 
       localStorage.quiz1 = pointsArray[0];
       localStorage.quiz2 = pointsArray[1];
       localStorage.quiz3 = pointsArray[2];
@@ -52,6 +59,8 @@ class MainScreen extends Component {
       this.props.history.replace('/results');
       return;
     }
+
+    // If it's not the last question
     this.setState((state) => {
       return {
         usersAnswer: "",

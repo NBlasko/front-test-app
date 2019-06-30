@@ -11,11 +11,14 @@ const SingleQuestion = (props) => {
                 <div key={num}>
                     <button value={answers[num]} onClick={handleAnswer}  >
                         {answers[num]}
+
+                        {/* user answers and it's correct */}
                         <span> {(usersAnswer && answers[num] === continent)
                             ? <MaterialIcon icon="check" />
                             : null
                         }
 
+                        {/* user's answer that is not correct */}
                             {(!isRight && answers[num] === usersAnswer)
                                 ? <MaterialIcon icon="close" />
                                 : null
