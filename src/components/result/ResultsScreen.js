@@ -4,17 +4,15 @@ import MaterialIcon, { colorPalette } from 'material-icons-react';
 import PropTypes from 'prop-types';
 
 class ResultsScreen extends Component {
-
   render() {
-    console.log("propis", this.props)
     const { points } = this.props;
     const pointsWithComma = points.toLocaleString();
     return (
-      <div>
+      <div id="results">
         Results
-        <div>  <MaterialIcon icon="category" /> </div>
+        <div>  <MaterialIcon icon="category" className="category-result" /> </div>
         <h2> Your Score </h2>
-        <div>  {pointsWithComma} pts </div>
+        <div >  {pointsWithComma} pts </div>
       </div>
     );
   }

@@ -29,7 +29,7 @@ const SingleQuestion = (props) => {
                 </div>
         )
     return (
-        <div>
+        <div id="single-question">
             <img src={image} style={{ width: 200 }} alt="continent" />
             {buttons}
         </div>

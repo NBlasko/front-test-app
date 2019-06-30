@@ -5,24 +5,26 @@ import PropTypes from 'prop-types';
 
 const Navbar = (props) => {
   const { pathname } = props.location;
-  
+
   let naviLinks = null;
 
   if (pathname !== "/main")
-    naviLinks = <ul>
-      <li><NavLink exact to="/">
-        <MaterialIcon icon="home" />
+    naviLinks =
+      <ul className="home-nav">
+        <li><NavLink exact to="/">
+          <MaterialIcon icon="home" />
+        </NavLink></li>
+        <li><NavLink to='/main'>
+          <MaterialIcon icon="category" /> Play
       </NavLink></li>
-      <li><NavLink to='/main'>
-        <MaterialIcon icon="category" /> Play
-      </NavLink></li>
-    </ul>;
+      </ul>;
 
   if (pathname === "/results")
-    naviLinks = <NavLink exact to="/">Finish</NavLink>;
+    naviLinks =
+      <NavLink exact to="/" className="results-nav">Finish</NavLink>;
 
   return (
-    <div >
+    <div id = "navbar">
       {naviLinks}
     </div>
   )

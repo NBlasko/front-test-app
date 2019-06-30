@@ -73,10 +73,10 @@ class MainScreen extends Component {
     const { questionNumber, usersAnswer } = this.state;
     const { questions } = this.props;
     return (
-      <div>
-        <div>
+      <div id="main-screen">
+        <h2>
           Question {questionNumber + 1} out of 5
-          </div>
+        </h2>
         {(questions.length !== 5)
           ? null
           : <SingleQuestion

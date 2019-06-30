@@ -17,7 +17,7 @@ class HomeScreen extends Component {
       );
 
     return (
-      <div>
+      <div id="home-screen">
         Your Scores
         {quizScores}
       </div>
