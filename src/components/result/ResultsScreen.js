@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import MaterialIcon, { colorPalette } from 'material-icons-react';
 
 class ResultsScreen extends Component {
   render() {
+    const { points } = this.props;
+    const pointsWithComma = points.toLocaleString();
     return (
       <div>
         Results
-        <h2> Youre Score </h2>
-        <div>  {this.props.points}  </div>
+        <div>  <MaterialIcon icon="category" /> </div>
+        <h2> Your Score </h2>
+        <div>  {pointsWithComma} pts </div>
       </div>
     );
   }

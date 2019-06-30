@@ -1,7 +1,7 @@
 import React from 'react';
+import MaterialIcon, { colorPalette } from 'material-icons-react';
 
 const SingleQuestion = (props) => {
- //   console.log("props", props);
     const { image, answers, continent } = props.question;
     const { handleAnswer, usersAnswer } = props;
     const isRight = (usersAnswer === continent);
@@ -12,12 +12,12 @@ const SingleQuestion = (props) => {
                     <button value={answers[num]} onClick={handleAnswer}  >
                         {answers[num]}
                         <span> {(usersAnswer && answers[num] === continent)
-                            ? "bravo"
+                            ? <MaterialIcon icon="check" />
                             : null
                         }
 
                             {(!isRight && answers[num] === usersAnswer)
-                                ? "cvrc"
+                                ? <MaterialIcon icon="close" />
                                 : null
                             } </span>
                     </button>
