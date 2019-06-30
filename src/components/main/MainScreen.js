@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuestions, postPoints } from '../../actions'
 import SingleQuestion from './SingleQuestion'
-
+import PropTypes from 'prop-types';
 
 class MainScreen extends Component {
 
@@ -98,6 +98,13 @@ class MainScreen extends Component {
 
 const mapStateToProps = ({ questions }) => {
   return { questions }
+}
+
+MainScreen.propTypes = {
+  fetchQuestions: PropTypes.func.isRequired,
+  postPoints: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
+  questions: PropTypes.array.isRequired,
 }
 
 export default connect(

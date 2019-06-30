@@ -4,8 +4,6 @@ import HomeScreen from '../home/HomeScreen'
 import MainScreen from '../main/MainScreen'
 import ResultsScreen from '../result/ResultsScreen'
 import Navbar from '../navbar/Navbar'
-import { connect } from 'react-redux';
-
 
 class App extends Component {
   render() {
@@ -25,8 +23,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {  }
-}
-
-export default connect(mapStateToProps, null )(App);
+export default App;

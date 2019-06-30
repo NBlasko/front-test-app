@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom'
 import MaterialIcon, { colorPalette } from 'material-icons-react';
+import PropTypes from 'prop-types';
 
 const Navbar = (props) => {
   const { pathname } = props.location;
@@ -26,4 +27,9 @@ const Navbar = (props) => {
     </div>
   )
 }
+
+Navbar.propTypes = {
+  location: PropTypes.object.isRequired,
+}
+
 export default withRouter(Navbar)
