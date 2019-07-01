@@ -1,5 +1,5 @@
 import React from 'react';
-import MaterialIcon, { colorPalette } from 'material-icons-react';
+import MaterialIcon /*, { colorPalette } */ from 'material-icons-react';
 import PropTypes from 'prop-types';
 
 const SingleQuestion = (props) => {

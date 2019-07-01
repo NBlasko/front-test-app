@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuestions, postPoints } from '../../actions'
 import SingleQuestion from './SingleQuestion'
+import { STORAGE_ARRAY } from '../../constants'
 import PropTypes from 'prop-types';
 
 class MainScreen extends Component {
@@ -31,9 +32,7 @@ class MainScreen extends Component {
     // for correct answer add 750 points
     if (e.target.value === questions[questionNumber].continent) {
       this.setState((state) => {
-        return {
-          points: state.points + 750
-        }
+        return { points: state.points + 750 }
       });
     }
   }
@@ -42,19 +41,21 @@ class MainScreen extends Component {
     // If last question
     if (this.state.questionNumber === 4) {
       const userPoints = this.state.points;
+      const playingDate = new Date().toLocaleDateString();
 
       // fetch from local Storage and sort all points
-      const pointsArray = [
-        localStorage.getItem('quiz1') || 0,
-        localStorage.getItem('quiz2') || 0,
-        localStorage.getItem('quiz3') || 0,
-        userPoints
-      ].sort((a, b) => { return b - a });
+      const storageArray =
+        STORAGE_ARRAY
+          .map((element) => localStorage.getItem(element) || "0 ")
+      storageArray.push(`${userPoints} ${playingDate}`);
+      storageArray.sort((a, b) => {
+        return parseInt(b.split(" ")[0])
+          - parseInt(a.split(" ")[0])
+      });
 
       // set new points list back in local Storage 
-      localStorage.quiz1 = pointsArray[0];
-      localStorage.quiz2 = pointsArray[1];
-      localStorage.quiz3 = pointsArray[2];
+      STORAGE_ARRAY.forEach((element, index) =>
+        localStorage.setItem(element, storageArray[index]))
       this.props.postPoints(userPoints);
       this.props.history.replace('/results');
       return;

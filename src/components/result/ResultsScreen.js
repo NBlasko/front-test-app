@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MaterialIcon, { colorPalette } from 'material-icons-react';
+import MaterialIcon /*, { colorPalette } */ from 'material-icons-react';
 import PropTypes from 'prop-types';
 
 class ResultsScreen extends Component {
@@ -9,10 +9,12 @@ class ResultsScreen extends Component {
     const pointsWithComma = points.toLocaleString();
     return (
       <div id="results">
-        Results
-        <div>  <MaterialIcon icon="category" className="category-result" /> </div>
+        <h4> Results </h4>
+        <div className="category-result" >
+          <MaterialIcon icon="category" size={100} color='#0050A5' />
+        </div>
         <h2> Your Score </h2>
-        <div >  {pointsWithComma} pts </div>
+        <h1> {pointsWithComma} pts </h1>
       </div>
     );
   }
