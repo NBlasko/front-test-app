@@ -1,0 +1,21 @@
+@import "variables";
+
+body, html {
+    height: 100%;
+}   
+
+.App {
+    height: 100vh;
+    color : colory(dark);
+
+    h5 {
+        margin: 0;
+        padding-top: sizy(xs);
+        padding-left: sizy(lg)
+    }
+}
+  
+@import "results";
+@import "navbar";
+@import "main-screen";
+@import "home-screen";

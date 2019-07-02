@@ -1,0 +1,25 @@
+$colors: (
+    primary: #0050A5,
+    danger: #D1493A,
+    success: #078B4F,
+    info: #FDB53C,
+    secondary: #8C8C8C,
+    light: white,
+    dark: #595959,
+    darkest: black
+);
+
+$sizes: (
+    xs: 0.3rem,
+    sm: 0.6rem,
+    md: 1.2rem,
+    lg: 1.9rem,
+);
+
+@function colory($color-name) {
+    @return map-get($colors, $color-name)
+};
+
+@function sizy($size-name) {
+    @return map-get($sizes, $size-name)
+};
