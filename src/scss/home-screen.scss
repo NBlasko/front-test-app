@@ -11,6 +11,20 @@
         margin: 1rem  0rem  0.6rem  0rem;
         padding: 0rem;
         height: 4.6rem;
+        animation-name: flyLeft;
+        -webkit-animation-name: flyLeft;
+        animation-duration: 3s;
+        -webkit-animation-duration: 3s;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+    }
+    div.rank-statistics-2 {
+        animation-delay: 1s;
+        -webkit-animation-delay: 1s;
+    }
+    div.rank-statistics-3 {
+        animation-delay: 0.5s;
+        -webkit-animation-delay: 0.5s;
     }
 
 }

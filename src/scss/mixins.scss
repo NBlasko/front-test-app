@@ -27,3 +27,9 @@
     -webkit-transform: scale($val);
     -ms-transform: scale($val);
 }
+
+@mixin flyLeft($val){
+    transform: translate($val);
+    -webkit-transform: translate($val);
+    -ms-transform: translate($val);
+}

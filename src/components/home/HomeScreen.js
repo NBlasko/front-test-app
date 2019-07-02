@@ -26,7 +26,7 @@ class HomeScreen extends Component {
           if (date.length > 1) date.shift();
 
           return (
-            <div key={key}>
+            <div className={`rank-statistics-${key + 1}`} key={key}>
 
               <span className="rank-no"> #{key + 1} </span>
 
