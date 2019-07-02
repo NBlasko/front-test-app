@@ -14,13 +14,25 @@ class HomeScreen extends Component {
         .map((score, key) => {
           let points = 0 || parseInt(score.split(" ")[0]);
           if (isNaN(points)) points = 0;
+          points = points.toLocaleString();
           let date = score.split(" ");
           if (date.length > 1) date.shift();
 
           return (
             <div key={key}>
+              
               <span className="rank-no"> #{key + 1} </span>
-              <span className="rank-points"> {points.toLocaleString()} pts </span>
+              <span className="rank-points">
+              {points} pts
+              
+              {
+                // hack to align items
+                (points.length<5)
+                ? <span style={{marginRight: "1.4rem"}}></span> 
+                : null
+              }
+               
+                </span>
               <span className="rank-date">
                 {
                   (date[0] && date[0] !== "null")
@@ -28,6 +40,7 @@ class HomeScreen extends Component {
                     : null
                 }
               </span>
+           
             </div>
           );
         });

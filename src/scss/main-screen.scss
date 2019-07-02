@@ -1,3 +1,5 @@
+@import "keyframes";
+
 #main-screen {
    
     h4 {
@@ -10,7 +12,9 @@
 }
 
 #single-question {
-      
+   
+    @include fade-duration-delay;
+  
     img {
         width: 100%;
         max-width: 25rem;
@@ -20,6 +24,7 @@
         margin-bottom: 0.6rem;
         margin-left: auto;
         margin-right: auto;
+
     }
 
     div  {
@@ -44,10 +49,24 @@
             outline: none;
           }
 
-        button.active-answer {
+        /*button answer when it's clicked*/ 
+        button.right-answer, button.wrong-answer  {
             color: white;
             background-color:colory(info); 
         }
+
+        button.wrong-answer {
+         /*animation properties*/
+         animation: shake 0.5s;
+         animation-iteration-count: 1;
+        }
+
+        button.right-answer{
+        /*animation properties*/
+        animation: pulse 1.5s infinite;
+        box-shadow: 0 0 0 0 rgba(colory(info), .5);
+        }
+
     }
 }
 
@@ -65,7 +84,7 @@ button  {
     }  
 }
 
-
+/* jump to the next question */
 button.next-button {
     position: relative;
     left: calc(50% - 2.9rem);

@@ -34,7 +34,7 @@ class MainScreen extends Component {
     this.setState({ usersAnswer });
 
     // for correct answer add 750 points
-    if (e.target.value === questions[questionNumber].continent) {
+    if (usersAnswer === questions[questionNumber].continent) {
       this.setState((state) => {
         return { points: state.points + 750 }
       });
@@ -73,7 +73,6 @@ class MainScreen extends Component {
       }
     })
   }
-
   render() {
     const { questionNumber, usersAnswer } = this.state;
     const { questions } = this.props;

@@ -1,4 +1,7 @@
 #results {
+
+    @include fade-duration-delay;
+    
     h4 {
         margin: 0rem 0rem 0rem 1.6rem ;  
         padding: sizy(xs);
@@ -8,20 +11,20 @@
     div.category-result {
         margin: 2rem auto 0rem auto;
         width: 50%;
-        text-align: center
+        text-align: center;
     } 
 
     h2 {
         margin: 0rem;
         padding-top: sizy(lg);
-        text-align: center
+        text-align: center;
     }
 
     h1 {
         color: colory(darkest);
         padding: 0rem;
         margin: sizy(xs);
-        text-align: center
+        text-align: center;
     }
 
     

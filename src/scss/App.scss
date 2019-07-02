@@ -14,7 +14,7 @@ body, html {
         padding-left: sizy(lg)
     }
 }
-  
+@import "mixins";  
 @import "results";
 @import "navbar";
 @import "main-screen";
