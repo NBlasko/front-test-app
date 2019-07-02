@@ -1,0 +1,45 @@
+div.home-nav {
+    position: absolute;
+    bottom: 1.8rem;
+    left: 1.8rem;  
+    
+    a span.home-span {
+        padding: 2.6rem 1.2rem 1.1rem 1.4rem;
+        border-radius: 0.6rem;
+        background-color: colory(primary); 
+    }
+
+    a span.main-span {
+        margin-left: 0.3rem;
+        padding: 2.1rem 1.2rem 1rem 1.6rem;
+        border-radius: 0.6rem;
+        background-color: white;
+        border: 2px solid colory(success);
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    a {  
+        text-decoration: none;
+        color: colory(success);
+    }
+    a span {
+        position: relative;
+        bottom: 0.3rem;
+    }
+}
+
+a.results-nav {   
+    padding: 1.2rem 2rem;
+    margin: 2rem auto 0rem auto;
+    width: 50%;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: white; 
+    color: colory(primary); 
+    border-radius: 1rem;
+    border: 2px solid colory(primary);
+}
+
+    
