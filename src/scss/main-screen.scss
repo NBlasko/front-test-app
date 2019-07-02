@@ -1,0 +1,85 @@
+#main-screen {
+   
+    h4 {
+        margin: sizy(xs) 0px sizy(xs) 25px ;  
+        padding:  0rem sizy(xs) sizy(xs) sizy(xs);
+        font-size: 1.5rem; 
+    }
+
+   
+}
+
+#single-question {
+      
+    img {
+        width: 100%;
+        max-width: 25rem;
+        height: auto;
+       
+        display: block;
+        margin-bottom: 0.6rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div  {
+
+        margin: 0.3rem 1.2rem 0.3rem 1.2rem;
+        padding: 0rem;
+
+        button {
+            display: block;
+            width: 100%;
+            color: black; 
+            border: 1px solid colory(info);
+            border-radius: 0.5rem;
+            background-color: white; 
+            padding: 0.6rem;
+            text-align: left;
+            font-size: 0.8 rem;
+            font-weight: bold;
+        }
+        
+        button:focus {
+            outline: none;
+          }
+
+        button.active-answer {
+            color: white;
+            background-color:colory(info); 
+        }
+    }
+}
+
+button  {
+
+    span.answer-text {
+        position: relative;
+        bottom: 0.6rem;
+        left: 0.3rem;
+    }
+
+    span.check-close {
+        float: right;
+        height: 1.8rem;
+    }  
+}
+
+
+button.next-button {
+    position: relative;
+    left: calc(50% - 2.9rem);
+    top: 0.3rem;
+    color: white;
+    padding: 1.2rem 1.8rem 1.2rem 1.8rem; 
+    border-radius: 0.5rem;
+    background-color: colory(success); 
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-width: 0rem;
+}
+
+button.next-button:focus {
+    outline: none;
+  }
