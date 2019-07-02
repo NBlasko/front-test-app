@@ -19,9 +19,9 @@ class HomeScreen extends Component {
 
           return (
             <div key={key}>
-              <span> #{key + 1} </span> {points.toLocaleString()} pts
-
-              <span>
+              <span className="rank-no"> #{key + 1} </span>
+              <span className="rank-points"> {points.toLocaleString()} pts </span>
+              <span className="rank-date">
                 {
                   (date[0] && date[0] !== "null")
                     ? ` on ${date}`
@@ -34,7 +34,7 @@ class HomeScreen extends Component {
 
     return (
       <div id="home-screen">
-        Your Scores
+       <div className="home-title"> Your Scores </div>
         {quizScores}
       </div>
     );

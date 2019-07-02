@@ -24,7 +24,11 @@ class MainScreen extends Component {
 
     const { questions } = this.props;
     const { questionNumber } = this.state;
-    const usersAnswer = e.target.value;
+
+    //it's tricky when button has children
+    const usersAnswer = ('BUTTON' === e.target.tagName)
+      ? e.target.value
+      : e.target.parentNode.value
 
     // user has answered
     this.setState({ usersAnswer });
@@ -75,9 +79,7 @@ class MainScreen extends Component {
     const { questions } = this.props;
     return (
       <div id="main-screen">
-        <h2>
-          Question {questionNumber + 1} out of 5
-        </h2>
+        <h4> Question {questionNumber + 1} out of 5</h4>
         {(questions.length !== 5)
           ? null
           : <SingleQuestion
@@ -88,7 +90,11 @@ class MainScreen extends Component {
         }
 
         {(usersAnswer)
-          ? <button onClick={this.handleNextQuestion}> NEXT </button>
+          ? <button
+            className="next-button"
+            onClick={this.handleNextQuestion}
+          > NEXT
+            </button>
           : null
         }
 

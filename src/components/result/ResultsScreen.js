@@ -11,7 +11,7 @@ class ResultsScreen extends Component {
       <div id="results">
         <h4> Results </h4>
         <div className="category-result" >
-          <MaterialIcon icon="category" size={100} color='#0050A5' />
+          <MaterialIcon icon="category" size={160} color='#0050A5' />
         </div>
         <h2> Your Score </h2>
         <h1> {pointsWithComma} pts </h1>

@@ -13,12 +13,12 @@ const Navbar = (props) => {
       <div className="home-nav">
         <NavLink exact to="/">
           <span className="home-span">
-            <MaterialIcon icon="home" color='#fff' />
+            <MaterialIcon icon="home" color='#fff'  size={35} />
           </span>
         </NavLink>
         <NavLink to='/main'>
           <span className="main-span" >
-            <MaterialIcon icon="category" color="#078B4F" />
+            <MaterialIcon icon="category" color="#078B4F" size={35}/>
             <span> Play</span>
           </span>
         </NavLink>
