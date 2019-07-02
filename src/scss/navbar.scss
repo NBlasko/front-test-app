@@ -1,6 +1,7 @@
 
 @include landscape;
 
+/* block buttons: home and play */
 div.home-nav {
     position: absolute;
     bottom: 1.8rem;
@@ -22,7 +23,7 @@ div.home-nav {
         margin-left: 0.3rem;
         padding: 2.1rem 1.2rem 1rem 1.6rem;
         border-radius: 0.6rem;
-        background-color: white;
+        background-color: colory(light);
         border: 2px solid colory(success);
         font-size: 1.4rem;
         font-weight: bold;
@@ -31,30 +32,34 @@ div.home-nav {
     a span.main-span:active {
         /* animation properties - this one is quick*/
         animation: fadeOut 0.5s;
+        -webkit-animation: fadeOut 0.5s;
         animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
     }
 
     a {  
         text-decoration: none;
         color: colory(success);
     }
+    
+    /*home icon */
     a span {
         position: relative;
         bottom: 0.3rem;
     }
 }
 
+/* Finish button */
 a.results-nav { 
     
     @include fade-duration-delay;
-
     padding: 1.2rem 2rem;
     margin: 2rem auto 0rem auto;
     width: 50%;
     display: block;
     text-decoration: none;
     text-align: center;
-    background-color: white; 
+    background-color: colory(light); 
     color: colory(primary); 
     border-radius: 1rem;
     border: 2px solid colory(primary);

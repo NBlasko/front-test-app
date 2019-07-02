@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MaterialIcon /*, { colorPalette } */ from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 import PropTypes from 'prop-types';
 
 class ResultsScreen extends Component {

@@ -79,22 +79,25 @@ class MainScreen extends Component {
     return (
       <div id="main-screen">
         <h4> Question {questionNumber + 1} out of 5</h4>
-        {(questions.length !== 5)
-          ? null
-          : <SingleQuestion
-            question={questions[questionNumber]}
-            handleAnswer={this.handleAnswer}
-            usersAnswer={usersAnswer}
-          />
+
+        {
+          (questions.length !== 5)
+            ? null
+            : <SingleQuestion
+              question={questions[questionNumber]}
+              handleAnswer={this.handleAnswer}
+              usersAnswer={usersAnswer}
+            />
         }
 
-        {(usersAnswer)
-          ? <button
-            className="next-button"
-            onClick={this.handleNextQuestion}
-          > NEXT
+        {
+          (usersAnswer)
+            ? <button
+              className="next-button"
+              onClick={this.handleNextQuestion}
+            > NEXT
             </button>
-          : null
+            : null
         }
 
       </div>

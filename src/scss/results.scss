@@ -1,25 +1,29 @@
 #results {
 
     @include fade-duration-delay;
-    
+
+    /* text "Results" */
     h4 {
         margin: 0rem 0rem 0rem 1.6rem ;  
         padding: sizy(xs);
         font-size: 1.5rem;
     }
 
+    /* wrapper for category icon */
     div.category-result {
         margin: 2rem auto 0rem auto;
         width: 50%;
         text-align: center;
     } 
 
+    /* text "Your Scores" */
     h2 {
         margin: 0rem;
         padding-top: sizy(lg);
         text-align: center;
     }
 
+    /*example "2,250 pts" */
     h1 {
         color: colory(darkest);
         padding: 0rem;

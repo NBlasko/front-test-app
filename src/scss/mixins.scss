@@ -15,3 +15,15 @@
         @content;
     }
 }
+
+@mixin transformShake($val1, $val2, $val3){
+    -webkit-transform: translate($val1, $val2) rotate($val3);
+    -ms-transform: translate($val1, $val2) rotate($val3);
+    transform: translate($val1, $val2) rotate($val3);
+  }
+
+@mixin pulse($val){
+    transform: scale($val);
+    -webkit-transform: scale($val);
+    -ms-transform: scale($val);
+}

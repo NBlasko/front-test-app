@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom'
-import MaterialIcon /*, { colorPalette } */ from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 import PropTypes from 'prop-types';
 
 const Navbar = (props) => {
@@ -13,12 +13,14 @@ const Navbar = (props) => {
       <div className="home-nav">
         <NavLink exact to="/">
           <span className="home-span">
-            <MaterialIcon icon="home" color='#fff'  size={35} />
+            {/* Meaningless link (or home icon). It refers to it self.
+              Don't know why you guys decided to put it here :) */}
+            <MaterialIcon icon="home" color='#fff' size={35} />
           </span>
         </NavLink>
         <NavLink to='/main'>
           <span className="main-span" >
-            <MaterialIcon icon="category" color="#078B4F" size={35}/>
+            <MaterialIcon icon="category" color="#078B4F" size={35} />
             <span> Play</span>
           </span>
         </NavLink>
@@ -26,7 +28,7 @@ const Navbar = (props) => {
 
   if (pathname === "/results")
     naviLinks =
-      <NavLink exact to="/" className="results-nav" >Finish</NavLink>;
+      <NavLink exact to="/" className="results-nav" > Finish </NavLink>;
 
   return (
     <div id="navbar" >

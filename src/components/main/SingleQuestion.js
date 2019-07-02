@@ -1,5 +1,5 @@
 import React from 'react';
-import MaterialIcon /*, { colorPalette } */ from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 
 import PropTypes from 'prop-types';
 
@@ -67,7 +67,7 @@ const SingleQuestion = (props) => {
 
 SingleQuestion.propTypes = {
     handleAnswer: PropTypes.func.isRequired,
-    usersAnswer: PropTypes.string,
+    usersAnswer: PropTypes.string.isRequired,
     questions: PropTypes.array
 }
 

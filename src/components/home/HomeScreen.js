@@ -13,26 +13,33 @@ class HomeScreen extends Component {
         // then create beautiful output :)
         .map((score, key) => {
           let points = 0 || parseInt(score.split(" ")[0]);
+          
+        // if answer is not in local storage then append 0;
           if (isNaN(points)) points = 0;
+        
+          // create number with comma period
           points = points.toLocaleString();
+
           let date = score.split(" ");
+
+          // if date exists then discard points part from local storage data
           if (date.length > 1) date.shift();
 
           return (
             <div key={key}>
-              
+
               <span className="rank-no"> #{key + 1} </span>
+
               <span className="rank-points">
-              {points} pts
-              
-              {
-                // hack to align items
-                (points.length<5)
-                ? <span style={{marginRight: "1.4rem"}}></span> 
-                : null
-              }
-               
-                </span>
+                {points} pts
+                {
+                  // hack to align items
+                  (points.length < 5)
+                    ? <span style={{ marginRight: "1.4rem" }}></span>
+                    : null
+                }
+              </span>
+
               <span className="rank-date">
                 {
                   (date[0] && date[0] !== "null")
@@ -40,14 +47,14 @@ class HomeScreen extends Component {
                     : null
                 }
               </span>
-           
+
             </div>
           );
         });
 
     return (
       <div id="home-screen">
-       <div className="home-title"> Your Scores </div>
+        <div className="home-title"> Your Scores </div>
         {quizScores}
       </div>
     );
