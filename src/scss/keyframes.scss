@@ -73,11 +73,11 @@
     100% {opacity: 0;}
  }
  
+ @-webkit-keyframes flyLeft {
+    0% { @include flyLeft(-20em); }
+    100% { @include flyLeft(0em); }
+ }
  @keyframes flyLeft {
-    0% {
-       @include flyLeft(-20em);    
-    }
-    100% {
-        @include flyLeft(0em); 
-    }
+    0% { @include flyLeft(-20em); }
+    100% { @include flyLeft(0em); }
  }
