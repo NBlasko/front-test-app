@@ -10,7 +10,7 @@ class MainScreen extends Component {
   state = {
     questionNumber: 0,
     usersAnswer: "",
-    points: 0
+    points: Array(5).fill(0)  // switch to array to stop double click
   }
 
   componentDidMount() {
@@ -35,16 +35,24 @@ class MainScreen extends Component {
 
     // for correct answer add 750 points
     if (usersAnswer === questions[questionNumber].continent) {
+      /* old way that creates double click and double adding points  
       this.setState((state) => {
-        return { points: state.points + 750 }
-      });
+          return { points: state.points + 750 }
+        }); */
+      const tempPointsArray = [...this.state.points];
+      tempPointsArray[this.state.questionNumber] = 750;
+      this.setState({ points: tempPointsArray });
+
     }
   }
 
   handleNextQuestion = () => {
     // If last question
     if (this.state.questionNumber === 4) {
-      const userPoints = this.state.points;
+
+      // suming the array we stop multiple click problem
+      const userPoints =
+        [...this.state.points].reduce((a, b) => a + b)
       const playingDate = new Date().toLocaleDateString();
 
       // fetch from local Storage and sort all points
@@ -74,6 +82,7 @@ class MainScreen extends Component {
     })
   }
   render() {
+    console.log("this.state", this.state)
     const { questionNumber, usersAnswer } = this.state;
     const { questions } = this.props;
     return (
